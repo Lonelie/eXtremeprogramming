@@ -16,10 +16,43 @@ class DestinataireInconnu
     private $id;
     
     /**
-     * @ORM\Column(type="string",length="255")
+     * @ORM\Column(type="string",length=255)
      * @Assert\NotBlank()
-     * @Assert\MinLength(3)
+     * @Assert\Length(min=3)
      */    
     private $mail;
     
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set mail
+     *
+     * @param string $mail
+     * @return DestinataireInconnu
+     */
+    public function setMail($mail)
+    {
+        $this->mail = $mail;
+
+        return $this;
+    }
+
+    /**
+     * Get mail
+     *
+     * @return string 
+     */
+    public function getMail()
+    {
+        return $this->mail;
+    }
 }
